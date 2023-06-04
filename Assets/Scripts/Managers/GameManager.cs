@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEngine;
 
 namespace QueueGame.Managers
 {
@@ -11,6 +12,9 @@ namespace QueueGame.Managers
         {
             yield return null;//wait one frame for other scripts awake/start.
             QueueGenerator.Instance.Initialize();
+
+            yield return new WaitForSeconds(0.5f);
+            yield return FadeManager.Instance.HidePanel();
         }
     }
 }
