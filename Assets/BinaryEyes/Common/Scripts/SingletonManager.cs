@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace QueueGame
+namespace BinaryEyes.Common
 {
     public class SingletonManager<T>
         : MonoBehaviour where T : SingletonManager<T>
