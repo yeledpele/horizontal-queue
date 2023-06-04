@@ -10909,6 +10909,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _state: 0
+  _rotationTime: 0.5
+  _turnPivot: {fileID: 2953284688746149531}
 --- !u!137 &2985353843591765545
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
