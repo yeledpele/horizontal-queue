@@ -55,6 +55,11 @@ namespace QueueGame.Components
 
         private void ActivateNormalClothes()
         {
+            _scarves.GetRandom().SetActive(true);
+            _chains.GetRandom().SetActive(true);
+            _caps.GetRandom().SetActive(true);
+            _shirts.GetRandom().SetActive(true);
+            _pants.GetRandom().SetActive(true);
 
         }
 
