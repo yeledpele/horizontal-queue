@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using QueueGame.Enums;
+using QueueGame.Extensions;
 using UnityEngine;
 
 namespace QueueGame.Components
@@ -34,6 +36,43 @@ namespace QueueGame.Components
         {
             _gender = gender;
             name = characterName;
+
+            var hasBeard = CheckShouldHaveBeard();
+            if (hasBeard)
+                _maleBeards.GetRandom().SetActive(true);
+
+            var hairs = _gender == Gender.Male ? _maleHair : _femaleHair;
+            var shoes = _gender == Gender.Male ? _maleShoes : _femaleShoes;
+            hairs.GetRandom().SetActive(true);
+            shoes.GetRandom().SetActive(true);
+
+            var profession = RandomizeProfession();
+            if (!string.IsNullOrEmpty(profession))
+                _professionSuits[profession].SetActive(true);
+            else
+                ActivateNormalClothes();
+        }
+
+        private void ActivateNormalClothes()
+        {
+
+        }
+
+        private string RandomizeProfession()
+        {
+            var hasProfession = Random.Range(0.0f, 100.0f) > 50.0f;
+            if (!hasProfession)
+                return string.Empty;
+
+            return _professionSuits.Keys.ToList().GetRandom();
+        }
+
+        private bool CheckShouldHaveBeard()
+        {
+            if (_gender == Gender.Female)
+                return false;
+
+            return Random.Range(0.0f, 100.0f) > 75.0f;
         }
 
         private void Awake()
