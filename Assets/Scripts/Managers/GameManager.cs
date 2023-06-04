@@ -15,6 +15,8 @@ namespace QueueGame.Managers
 
             yield return new WaitForSeconds(0.5f);
             yield return FadeManager.Instance.HidePanel();
+
+            PlayerManager.Instance.Initialize();
         }
     }
 }

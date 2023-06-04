@@ -1,4 +1,6 @@
-﻿using QueueGame.Components;
+﻿using System.Collections;
+using QueueGame.Components;
+using QueueGame.Enums;
 using UnityEngine;
 
 namespace QueueGame.Managers
@@ -18,6 +20,22 @@ namespace QueueGame.Managers
         public void Initialize()
         {
             Debug.Log("InitializingPlayerManager");
+            enabled = true;
+        }
+
+        private void Update()
+        {
+            var action = Input.GetKey(LeanLeftKey) ? PlayerAction.LeanLeft
+                : Input.GetKey(LeanRightKey) ? PlayerAction.LeanRight
+                : PlayerAction.None;
+
+            _player.SetAction(action);
+        }
+
+        protected override void Awake()
+        {
+            base.Awake();
+            enabled = false;
         }
     }
 }
