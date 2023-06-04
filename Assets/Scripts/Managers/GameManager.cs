@@ -17,6 +17,7 @@ namespace QueueGame.Managers
             yield return FadeManager.Instance.HidePanel();
 
             PlayerManager.Instance.Initialize();
+            TapManager.Instance.Initialize();
         }
     }
 }
