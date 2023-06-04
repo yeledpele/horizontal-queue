@@ -1,4 +1,3 @@
-using System;
 using QueueGame.Components;
 using QueueGame.Data;
 using QueueGame.Enums;
@@ -8,11 +7,8 @@ using Random = UnityEngine.Random;
 namespace QueueGame.Managers
 {
     public class QueueGenerator
-        : MonoBehaviour
+        : SingletonManager<QueueGenerator>
     {
-        public static QueueGenerator Instance { get; private set; }
-        public static bool Exists => Instance != null;
-
         [SerializeField] private Transform _queueRoot;
         [SerializeField] private GameObject _characterPrefab;
         [SerializeField] private NameDictionary _nameDictionary;
@@ -23,16 +19,7 @@ namespace QueueGame.Managers
         public float Spacing = 1.5f;
         public int TotalParticipants = 10;
 
-        private void Awake()
-        {
-            if (Instance != null)
-                throw new InvalidOperationException($"singleton instance already exists: type={GetType().Name}");
-
-            Instance = this;
-            GenerateQueue();
-        }
-
-        private void GenerateQueue()
+        public void Initialize()
         {
             Debug.Log("GeneratingQueue");
             CharacterPrefab.SetActive(false);
