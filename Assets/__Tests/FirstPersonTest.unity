@@ -4746,6 +4746,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10af93487f05c484e9e3bd62b6c9eacb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tapCount: 0
+  _tapTimeLeft: 0
 --- !u!1 &1016957857
 GameObject:
   m_ObjectHideFlags: 0
@@ -10311,6 +10313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2953284688746149531}
   - component: {fileID: 2953284688746149532}
+  - component: {fileID: 2953284688746149533}
   m_Layer: 0
   m_Name: HumanoidBase
   m_TagString: Untagged
@@ -10893,6 +10896,19 @@ MonoBehaviour:
   - {fileID: 6207438338819297866}
   - {fileID: 185655502997421477}
   - {fileID: 6808690831181713344}
+--- !u!114 &2953284688746149533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069347840829191820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ebdd1e4479b7246b019931086183bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _state: 0
 --- !u!137 &2985353843591765545
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
