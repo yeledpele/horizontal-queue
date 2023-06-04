@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using BinaryEyes.Common;
+using BinaryEyes.Common.Extensions;
 using UnityEngine;
 
 namespace QueueGame.Managers
@@ -10,6 +12,7 @@ namespace QueueGame.Managers
 
         private IEnumerator InitializeGame()
         {
+            this.LogMessage("InitializingGame");
             yield return null;//wait one frame for other scripts awake/start.
             QueueGenerator.Instance.Initialize();
 

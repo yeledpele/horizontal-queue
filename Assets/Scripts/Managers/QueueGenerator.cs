@@ -1,3 +1,5 @@
+using BinaryEyes.Common;
+using BinaryEyes.Common.Extensions;
 using QueueGame.Components;
 using QueueGame.Data;
 using QueueGame.Enums;
@@ -21,7 +23,8 @@ namespace QueueGame.Managers
 
         public void Initialize()
         {
-            Debug.Log("GeneratingQueue");
+            this.LogInitializing();
+            this.LogMessage("GeneratingQueue");
             CharacterPrefab.SetActive(false);
 
             for (var i = 0; i < TotalParticipants; i++)

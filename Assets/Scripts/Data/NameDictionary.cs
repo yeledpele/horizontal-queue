@@ -1,5 +1,5 @@
-﻿using QueueGame.Enums;
-using QueueGame.Extensions;
+﻿using BinaryEyes.Common.Extensions;
+using QueueGame.Enums;
 using UnityEngine;
 
 namespace QueueGame.Data

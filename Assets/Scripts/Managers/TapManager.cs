@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using BinaryEyes.Common;
+using BinaryEyes.Common.Extensions;
+using UnityEngine;
 
 namespace QueueGame.Managers
 {
@@ -7,8 +10,13 @@ namespace QueueGame.Managers
     {
         public void Initialize()
         {
-            Debug.Log("InitializingTapManager");
+            this.LogInitializing();
+            StartCoroutine(WaitForTap());
+        }
 
+        private IEnumerator WaitForTap()
+        {
+            yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
         }
     }
 }

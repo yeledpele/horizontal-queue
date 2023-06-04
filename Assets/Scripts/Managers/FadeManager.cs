@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using BinaryEyes.Common;
 using UnityEngine;
 
 namespace QueueGame.Managers

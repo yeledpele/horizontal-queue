@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using BinaryEyes.Common.Extensions;
 using QueueGame.Enums;
-using QueueGame.Extensions;
 using UnityEngine;
 
 namespace QueueGame.Components

@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using BinaryEyes.Common;
+using BinaryEyes.Common.Extensions;
 using QueueGame.Components;
 using QueueGame.Enums;
 using UnityEngine;
@@ -19,7 +21,7 @@ namespace QueueGame.Managers
 
         public void Initialize()
         {
-            Debug.Log("InitializingPlayerManager");
+            this.LogInitializing();
             enabled = true;
         }
 
