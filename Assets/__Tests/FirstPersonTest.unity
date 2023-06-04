@@ -428,7 +428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _queueRoot: {fileID: 404362991}
   _characterPrefab: {fileID: 2069347840829191820}
-  _nameDictionary: {fileID: 0}
+  _nameDictionary: {fileID: 11400000, guid: d4bac8f91be30b4458e26b7cd3d0bb4a, type: 2}
   SpacingX: 0.5
   Spacing: 1.5
   TotalParticipants: 10
@@ -1009,6 +1009,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1916830558}
+  - component: {fileID: 1916830559}
   m_Layer: 0
   m_Name: Runtime
   m_TagString: Untagged
@@ -1033,6 +1034,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1916830559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916830557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc46786531ec87240835b15481bf39fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &45209987300873442
 Transform:
   m_ObjectHideFlags: 0
