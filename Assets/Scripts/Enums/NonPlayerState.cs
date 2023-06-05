@@ -3,6 +3,7 @@
     public enum NonPlayerState
     {
         Waiting,
+        Turning,
         EngagedWithPlayer,
     }
 }
