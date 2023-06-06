@@ -55,9 +55,15 @@ namespace QueueGame.Components
 
         private void ActivateNormalClothes()
         {
-            _scarves.GetRandom().SetActive(true);
-            _chains.GetRandom().SetActive(true);
-            _caps.GetRandom().SetActive(true);
+            if (CheckRoll(50.0f))
+                _scarves.GetRandom().SetActive(true);
+
+            if (CheckRoll(50.0f))
+                _chains.GetRandom().SetActive(true);
+
+            if (CheckRoll(50.0f))
+                _caps.GetRandom().SetActive(true);
+
             _shirts.GetRandom().SetActive(true);
             _pants.GetRandom().SetActive(true);
 
@@ -65,8 +71,7 @@ namespace QueueGame.Components
 
         private string RandomizeProfession()
         {
-            var hasProfession = Random.Range(0.0f, 100.0f) > 50.0f;
-            if (!hasProfession)
+            if (!CheckRoll(50.0f))
                 return string.Empty;
 
             return _professionSuits.Keys.ToList().GetRandom();
@@ -77,7 +82,7 @@ namespace QueueGame.Components
             if (_gender == Gender.Female)
                 return false;
 
-            return Random.Range(0.0f, 100.0f) > 75.0f;
+            return CheckRoll(75.0f);
         }
 
         private void Awake()
@@ -88,5 +93,8 @@ namespace QueueGame.Components
                 _professionSuits.Add(professionName, suit);
             }
         }
+
+        private static bool CheckRoll(float min)
+            => Random.Range(0.0f, 100.0f) > min;
     }
 }
