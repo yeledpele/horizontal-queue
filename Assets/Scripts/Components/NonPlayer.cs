@@ -22,6 +22,8 @@ namespace QueueGame.Components
         [SerializeField] private float _attentionSpan;
         [SerializeField] private float _attentionSpanDepletionRate;
         private Coroutine _currentProcess;
+        private NonPlayerUI _ui;
+        
         public NonPlayerState State => _state;
         public float CurrentAttentionSpan => _currentAttentionSpan;
 
@@ -45,6 +47,8 @@ namespace QueueGame.Components
 
             this.LogMessage("EngagedWithPlayer");
             _state = NonPlayerState.EngagedWithPlayer;
+            
+            yield return _ui.Show(0.35f);
             _currentProcess = StartCoroutine(LoseInterestInPlayer());
         }
 
@@ -58,6 +62,8 @@ namespace QueueGame.Components
             }
 
             this.LogMessage("LostInterestInPlayer");
+            yield return _ui.Hide(0.35f);
+
             _state = NonPlayerState.Turning;
             var source = _turnPivot.position;
             var rotationDirection = source.x < 0.0f ? -1.0f : +1.0f;
@@ -67,6 +73,13 @@ namespace QueueGame.Components
 
             this.LogMessage("WaitingInLine");
             _state = NonPlayerState.Waiting;
+        }
+
+        private void Awake()
+        {
+            this.LogWakingUp();
+            _ui = GetComponent<NonPlayerUI>();
+            _ui.Deactivate();
         }
     }
 }
