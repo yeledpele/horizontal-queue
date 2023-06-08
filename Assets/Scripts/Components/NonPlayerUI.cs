@@ -46,10 +46,13 @@ namespace QueueGame.Components
             var position = transform.position;
             var scaleValue = position.x < 0.0f ? 1.0f : -1.0f;
             var canvasScale = new Vector3(-scaleValue, 1.0f, 1.0f);
-            _canvasGroup.transform.localScale = Vector3.Scale(_canvasGroup.transform.localScale, canvasScale);
+            _canvasGroup.transform.localScale = canvasScale;
 
-            var textScale = new Vector3(-scaleValue, 1.0f, 1.0f);
-            _textOutput.transform.localScale = Vector3.Scale(_textOutput.transform.localScale, textScale);
+            var canvasRotation = new Vector3(0.0f, 5.0f*scaleValue, 0.0f);
+            _canvasGroup.transform.localEulerAngles = canvasRotation;
+
+            var textScale = new Vector3(scaleValue, 1.0f, 1.0f);
+            _textOutput.transform.localScale = textScale;
         }
     }
 }
